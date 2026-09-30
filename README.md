@@ -1,0 +1,30 @@
+# ShameOnYou.com
+
+People-powered consumer accountability network: expose scams, junk fees, shrinkflation, dark patterns and greenwashing — and get free help.
+
+**Live:** https://webworksa1.github.io/shameonyou-com/ (GitHub Pages, free plan)
+
+## Stack
+Pure static HTML/CSS/vanilla JS — no build step, runs on the GitHub Pages free plan.
+
+- `assets/js/config.js` — one file to go live (AdSense, GA4, YouTube IDs, donation links, contest end date).
+- `assets/js/data.js` — expandable content: add Hall of Shame entries, scam alerts and guides here; pages render them automatically.
+- `assets/js/partials.js` — shared footer, lead-gen form, newsletter band, cookie banner and mobile CTA (edit once, updates every page).
+- `assets/js/main.js` — forms, multi-step lead-gen, donations, tools, quiz, voting, ads loader, consent.
+
+## Go-live checklist
+1. **Forms** — all forms post via FormSubmit AJAX. The very first submission triggers a one-time *activation email* to the site inbox; click “Activate” once and every form works from then on.
+2. **AdSense** — put your publisher ID in `assets/js/config.js` (`adsenseClient`) and in `ads.txt`.
+3. **Analytics** — optional GA4 ID in `config.js`.
+4. **YouTube** — add video IDs in `config.js → videos`.
+5. **Donations** — PayPal works out of the box; add Ko-fi / Buy Me a Coffee / Patreon / Stripe links in `config.js` to show those buttons.
+6. **Custom domain** — add a `CNAME` file with `shameonyou.com`, point DNS A records to `185.199.108.153`, `.109`, `.110`, `.111`, and `www` CNAME → `webworksa1.github.io`. Then replace `webworksa1.github.io/shameonyou-com/` with `shameonyou.com/` in page `<head>` tags, `sitemap.xml` and `robots.txt`.
+7. Submit `sitemap.xml` in Google Search Console.
+
+## Pages
+Home · Hall of Shame · Report · Scam Alerts · Tools (link scanner, Shame-O-Meter, Scam IQ quiz) · Get Help (lead-gen) · Learn · Videos · Contests · Donate · Careers · Advertise · About · Contact · Legal · Privacy · Terms · Moderation · Contest Rules · 404
+
+See `PROMPT.md` for the concept analysis and phase-wise build prompt.
+
+## Trademark & copyright
+“ShameOnYou.com” is used as this site’s domain name only; no trademark is claimed in the common phrase “shame on you”. Not affiliated with any entity using a similar name. Original content © ShameOnYou.com.
